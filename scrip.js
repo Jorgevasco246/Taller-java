@@ -1,13 +1,31 @@
-const formulario = document.getElementById('formulario')
+document.getElementById('calcular').addEventListener('click', function () {
+    let operador1 = document.getElementById('operador1').value;
+    let signo = document.getElementById('signos').value;
+    let operador2 = document.getElementById('operador2').value;
+   
+    operador1 = parseFloat(operador1);
+    operador2 = parseFloat(operador2);
+    let resultado;
 
-formulario.addEventListener('submit', function (event) {
-    event.preventDefault();
+    if (signo === "+") {
+        resultado = operador1 + operador2;
+    } else if (signo === "-") {
+        resultado = operador1 - operador2;
+    } else if (signo === "*") {
+        resultado = operador1 * operador2;
+    } else if (signo === "**") {
+        resultado = operador1 ** operador2;
+    } else if (signo === "%") {
+        resultado = operador1 % operador2;
+    } else if (signo === "/") {
+        if (operador2 !== 0) {
+            resultado = operador1 / operador2;
+        } else {
+            resultado = "error no se puede dividir por 0!";
+        }
+    } else {
+        resultado = "error operador no valido!";
+    }
 
-    let operador1 = document.getElementById('operador1').value
-    let signos = document.getElementById('signos').value
-    let operador2 = document.getElementById('operador2').value
-
-    const textofinal = Mi nombre es  ${ operador1 }, mi edad es ${ signos } y naci el ${ operador2 };
-
-    document.getElementById('resultado').textContent = textofinal
-})
+    document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+});

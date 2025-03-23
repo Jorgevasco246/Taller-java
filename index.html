@@ -10,24 +10,22 @@
 <body>
     <h1>Calculadora HTML</h1>
     <form id="formulario">
-        <!-- Campo para el nombre -->
+
         <label for="operador1"></label>
-        <input type="text" id="operador1" placeholder="Operador 1" required>
+        <input type="number" id="operador1" placeholder="Operador 1" required>
 
-        <!-- Campo para la edad -->
         <label for="signos"></label>
-        <input type="symbols" id="signos" placeholder="+ - * /" required>
+        <input type="text" id="signos" placeholder="+ - * /" required>
 
-        <!-- Campo para la fecha de nacimiento -->
         <label for="operador2"></label>
         <input type="number" id="operador2" placeholder="Operador 2" required>
 
-        <!-- Botón para enviar el formulario -->
-        <button type="submit">Calcular</button>
+        <button type="button" id="calcular">Calcular</button>
     </form>
 
-    <!-- Área para mostrar el resultado -->
+
     <div class="resultado" id="resultado"></div>
     <script src="scrip.js"></script>
+    
 </body>
 </html>
